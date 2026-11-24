@@ -1,0 +1,979 @@
+{
+ "as_of": "2026-11-24",
+ "servers": [
+  {
+   "name": "lin-ldap-01",
+   "os": "linux",
+   "role": "directory",
+   "last_patched": "2026-11-12",
+   "certs": [
+    {
+     "subject": "ldap.corp.example",
+     "not_after": "2027-06-22"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "/var/lib/ldap",
+     "kind": "local",
+     "size_gb": 100,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 20.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 20.1
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 20.2
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 20.3
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 20.4
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 20.5
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 20.6
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 20.7
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 20.8
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 20.9
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 21.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 21.1
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 21.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "lin-ldap-02",
+   "os": "linux",
+   "role": "directory",
+   "last_patched": "2026-11-12",
+   "certs": [
+    {
+     "subject": "ldap.corp.example",
+     "not_after": "2027-06-22"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "/var/lib/ldap",
+     "kind": "local",
+     "size_gb": 100,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 20.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 20.1
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 20.2
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 20.3
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 20.4
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 20.5
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 20.6
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 20.7
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 20.8
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 20.9
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 21.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 21.1
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 21.2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "lin-web-01",
+   "os": "linux",
+   "role": "apache",
+   "last_patched": "2026-11-15",
+   "certs": [
+    {
+     "subject": "www.corp.example",
+     "not_after": "2026-12-19"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "/var/www",
+     "kind": "local",
+     "size_gb": 200,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 80.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 82.0
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 84.0
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 86.0
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 88.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 90.0
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 92.0
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 94.0
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 96.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 98.0
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 100.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 102.0
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 104.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "lin-web-02",
+   "os": "linux",
+   "role": "apache",
+   "last_patched": "2026-09-14",
+   "certs": [
+    {
+     "subject": "www.corp.example",
+     "not_after": "2026-12-19"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "/var/www",
+     "kind": "local",
+     "size_gb": 200,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 82.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 84.0
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 86.0
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 88.0
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 90.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 92.0
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 94.0
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 96.0
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 98.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 100.0
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 102.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 104.0
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 106.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "lin-mail-01",
+   "os": "linux",
+   "role": "mail-relay",
+   "last_patched": "2026-11-06",
+   "certs": [
+    {
+     "subject": "smtp.corp.example",
+     "not_after": "2026-11-29"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "/var/spool",
+     "kind": "local",
+     "size_gb": 100,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 10.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 10.2
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 10.5
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 10.8
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 11.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 11.2
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 11.5
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 11.8
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 12.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 12.2
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 12.5
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 12.8
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 13.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "lin-nas-01",
+   "os": "linux",
+   "role": "file-server",
+   "last_patched": "2026-11-02",
+   "certs": [],
+   "volumes": [
+    {
+     "name": "/export/labs",
+     "kind": "nas",
+     "size_gb": 20000,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 14000
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 14275
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 14550
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 14825
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 15100
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 15375
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 15650
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 15925
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 16200
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 16475
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 16750
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 17025
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 17300
+      }
+     ]
+    },
+    {
+     "name": "/export/home",
+     "kind": "nas",
+     "size_gb": 8000,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 3000
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 3030
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 3060
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 3090
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 3120
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 3150
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 3180
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 3210
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 3240
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 3270
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 3300
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 3330
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 3360
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "lin-hpc-01",
+   "os": "linux",
+   "role": "compute",
+   "last_patched": "2026-10-20",
+   "certs": [],
+   "volumes": [
+    {
+     "name": "/scratch",
+     "kind": "san",
+     "size_gb": 50000,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 30000
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 30600
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 31200
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 31800
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 32400
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 33000
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 33600
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 34200
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 34800
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 35400
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 36000
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 36600
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 37200
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "win-ad-01",
+   "os": "windows",
+   "role": "domain-controller",
+   "last_patched": "2026-11-10",
+   "certs": [
+    {
+     "subject": "dc01.corp.example",
+     "not_after": "2027-09-20"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "C:",
+     "kind": "local",
+     "size_gb": 200,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 90.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 91.0
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 92.0
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 93.0
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 94.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 95.0
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 96.0
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 97.0
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 98.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 99.0
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 100.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 101.0
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 102.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "win-ad-02",
+   "os": "windows",
+   "role": "domain-controller",
+   "last_patched": "2026-11-10",
+   "certs": [
+    {
+     "subject": "dc02.corp.example",
+     "not_after": "2027-09-20"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "C:",
+     "kind": "local",
+     "size_gb": 200,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 88.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 89.0
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 90.0
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 91.0
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 92.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 93.0
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 94.0
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 95.0
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 96.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 97.0
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 98.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 99.0
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 100.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "win-sql-01",
+   "os": "windows",
+   "role": "sql-server",
+   "last_patched": "2026-10-15",
+   "certs": [],
+   "volumes": [
+    {
+     "name": "D:",
+     "kind": "san",
+     "size_gb": 4000,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 2500
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 2560
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 2620
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 2680
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 2740
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 2800
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 2860
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 2920
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 2980
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 3040
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 3100
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 3160
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 3220
+      }
+     ]
+    },
+    {
+     "name": "L:",
+     "kind": "san",
+     "size_gb": 500,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 300.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 302.5
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 305.0
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 307.5
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 310.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 312.5
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 315.0
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 317.5
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 320.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 322.5
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 325.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 327.5
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 330.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "win-iis-01",
+   "os": "windows",
+   "role": "iis",
+   "last_patched": "2026-11-16",
+   "certs": [
+    {
+     "subject": "apps.corp.example",
+     "not_after": "2027-01-08"
+    }
+   ],
+   "volumes": [
+    {
+     "name": "C:",
+     "kind": "local",
+     "size_gb": 250,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 120.0
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 121.5
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 123.0
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 124.5
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 126.0
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 127.5
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 129.0
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 130.5
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 132.0
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 133.5
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 135.0
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 136.5
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 138.0
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "win-file-01",
+   "os": "windows",
+   "role": "file-server",
+   "last_patched": "2026-11-08",
+   "certs": [],
+   "volumes": [
+    {
+     "name": "E:",
+     "kind": "nas",
+     "size_gb": 10000,
+     "history": [
+      {
+       "date": "2026-09-25",
+       "used_gb": 9000
+      },
+      {
+       "date": "2026-09-30",
+       "used_gb": 9070
+      },
+      {
+       "date": "2026-10-05",
+       "used_gb": 9140
+      },
+      {
+       "date": "2026-10-10",
+       "used_gb": 9210
+      },
+      {
+       "date": "2026-10-15",
+       "used_gb": 9280
+      },
+      {
+       "date": "2026-10-20",
+       "used_gb": 9350
+      },
+      {
+       "date": "2026-10-25",
+       "used_gb": 9420
+      },
+      {
+       "date": "2026-10-30",
+       "used_gb": 9490
+      },
+      {
+       "date": "2026-11-04",
+       "used_gb": 9560
+      },
+      {
+       "date": "2026-11-09",
+       "used_gb": 9630
+      },
+      {
+       "date": "2026-11-14",
+       "used_gb": 9700
+      },
+      {
+       "date": "2026-11-19",
+       "used_gb": 9770
+      },
+      {
+       "date": "2026-11-24",
+       "used_gb": 9840
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

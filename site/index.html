@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>estate-audit</title>
+<style>body{font:16px/1.6 system-ui,sans-serif;max-width:720px;margin:40px auto;padding:0 16px;color:#0f172a}
+code,pre{background:#f1f5f9;border-radius:4px}pre{padding:12px;overflow-x:auto}code{padding:1px 4px}a{color:#1d4ed8}</style></head>
+<body><h1>estate-audit</h1>
+<p>Audit a mixed Linux and Windows server estate: patch age, certificate expiry, SAN and NAS volume forecasts, LDAP account hygiene and a tamper-evident maintenance log.</p>
+<p><a href="report.html">See the sample report</a> (synthetic data: 12 servers, one LDAP dump). <a href="https://github.com/gerardrecinto/estate-audit">Source and README</a>.</p>
+<pre>git clone https://github.com/gerardrecinto/estate-audit && cd estate-audit
+python3 -m venv .venv &amp;&amp; . .venv/bin/activate &amp;&amp; pip install -e .
+estate-audit check data/sample_inventory.json --ldif data/sample.ldif</pre>
+<p>Lab scale: checked on CI runners with synthetic data, not on a real fleet.</p>
+</body></html>

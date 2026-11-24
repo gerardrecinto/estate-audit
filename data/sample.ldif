@@ -1,0 +1,60 @@
+# Synthetic directory dump. Seeded problems are listed in tests/test_ldapaudit.py.
+dn: cn=staff,ou=groups,dc=corp,dc=example
+objectClass: posixGroup
+cn: staff
+gidNumber: 1000
+memberUid: alice
+memberUid: bob
+memberUid: carol
+memberUid: ghost
+
+dn: cn=labs,ou=groups,dc=corp,dc=example
+objectClass: posixGroup
+cn: labs
+gidNumber: 1001
+memberUid: alice
+
+dn: uid=alice,ou=people,dc=corp,dc=example
+objectClass: posixAccount
+objectClass: inetOrgPerson
+uid: alice
+cn: Alice Example
+sn: Example
+uidNumber: 10001
+gidNumber: 1000
+homeDirectory: /home/alice
+loginShell: /bin/bash
+
+dn: uid=bob,ou=people,dc=corp,dc=example
+objectClass: posixAccount
+objectClass: inetOrgPerson
+objectClass: shadowAccount
+uid: bob
+cn: Bob Example
+sn: Example
+uidNumber: 10002
+gidNumber: 1000
+homeDirectory: /home/bob
+loginShell: /bin/bash
+shadowExpire: 19700
+
+dn: uid=carol,ou=people,dc=corp,dc=example
+objectClass: posixAccount
+objectClass: inetOrgPerson
+uid: carol
+cn: Carol Example
+sn: Example
+uidNumber: 10002
+gidNumber: 1000
+homeDirectory: /home/carol
+loginShell: /bin/bash
+
+dn: uid=dave,ou=people,dc=corp,dc=example
+objectClass: posixAccount
+objectClass: inetOrgPerson
+uid: dave
+cn: Dave Example
+sn: Example
+uidNumber: 10004
+gidNumber: 2000
+homeDirectory: /home/dave

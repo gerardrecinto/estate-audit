@@ -1,0 +1,98 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  python:
+    name: Python tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: pip install -e ".[dev]"
+      - run: pytest -q
+      - name: Clean install, first run from the README
+        run: |
+          python -m venv /tmp/clean && /tmp/clean/bin/pip install -q .
+          /tmp/clean/bin/estate-audit check data/sample_inventory.json --ldif data/sample.ldif || test $? -eq 1
+
+  ldap:
+    name: Account audit against a real OpenLDAP
+    runs-on: ubuntu-latest
+    services:
+      ldap:
+        image: osixia/openldap:1.5.0
+        env:
+          LDAP_ORGANISATION: Corp
+          LDAP_DOMAIN: corp.example
+          LDAP_ADMIN_PASSWORD: admin
+        ports: ["389:389"]
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y -qq ldap-utils
+      - name: Wait for the directory
+        run: |
+          for i in $(seq 1 60); do
+            ldapsearch -x -H ldap://localhost -b dc=corp,dc=example -s base >/dev/null 2>&1 && exit 0
+            sleep 2
+          done
+          echo "OpenLDAP did not come up"; exit 1
+      - name: Load the sample entries
+        run: |
+          ldapadd -x -H ldap://localhost -D cn=admin,dc=corp,dc=example -w admin <<'LDIF'
+          dn: ou=people,dc=corp,dc=example
+          objectClass: organizationalUnit
+          ou: people
+
+          dn: ou=groups,dc=corp,dc=example
+          objectClass: organizationalUnit
+          ou: groups
+          LDIF
+          ldapadd -x -H ldap://localhost -D cn=admin,dc=corp,dc=example -w admin -f data/sample.ldif
+      - name: Dump with ldapsearch and audit the dump
+        run: |
+          ldapsearch -x -LLL -H ldap://localhost -D cn=admin,dc=corp,dc=example -w admin \
+            -b dc=corp,dc=example '(|(objectClass=posixAccount)(objectClass=posixGroup))' > dump.ldif
+          grep -c '^dn:' dump.ldif
+          PYTHONPATH=src python -m estate_audit ldap dump.ldif --as-of 2026-11-24 | tee out.txt || test $? -eq 1
+          for c in duplicate-uidnumber expired-with-shell missing-attribute orphan-gid stale-member; do
+            grep -q "$c" out.txt || { echo "missing finding: $c"; exit 1; }
+          done
+          test "$(grep -cE '^ +(CRITICAL|WARN)' out.txt)" -eq 5
+
+  linux-facts:
+    name: Linux facts on a real runner
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: PYTHONPATH=src python -m estate_audit facts-linux | tee facts.json
+      - run: PYTHONPATH=src python -m estate_audit check facts.json || test $? -eq 1
+
+  windows:
+    name: PowerShell facts on a real Windows runner
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pester
+        shell: pwsh
+        run: Invoke-Pester -Path windows -CI -Output Detailed
+      - name: Collect facts and audit them with the Python tool
+        shell: bash
+        run: |
+          pwsh -File windows/Get-ServerFacts.ps1 -Role ci-runner > facts.json
+          cat facts.json
+          PYTHONPATH=src python -m estate_audit check facts.json || test $? -eq 1
