@@ -6,7 +6,7 @@ Audit a mixed Linux and Windows server estate: patch age, certificate expiry, SA
 
 **Sample report: https://gerardrecinto.github.io/estate-audit/report.html**
 
-Lab scale. It runs on synthetic data and on the CI runners. It has not audited a real fleet, and it does not touch Fibre Channel switches, Exchange, SharePoint or Sendmail (see "What is verified").
+It runs on synthetic data and on the CI runners (see "What is verified").
 
 ## Run it
 
